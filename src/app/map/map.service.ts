@@ -1,4 +1,4 @@
-import { Injectable, RendererFactory2, Injector, Renderer2 } from '@angular/core'
+import { Injectable, RendererFactory2, Renderer2 } from '@angular/core'
 import Map from 'esri/Map'
 import MapView from 'esri/views/MapView'
 import { BehaviorSubject } from 'rxjs'
@@ -14,10 +14,7 @@ export class MapService  {
   public _renderer: Renderer2
   public _mapView$: BehaviorSubject<MapView> = new BehaviorSubject<MapView>(null)
 
-  constructor(
-    protected injector: Injector,
-    private rendererFactory: RendererFactory2,
-  ) {
+  constructor(private rendererFactory: RendererFactory2) {
 
     this._renderer  = this.rendererFactory.createRenderer(null, null)
     this._container = this._renderer.createElement('div')
