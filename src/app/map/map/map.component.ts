@@ -13,7 +13,7 @@ export class MapComponent implements OnInit {
   constructor(private ms: MapService) { }
 
   ngOnInit(): void {
-    this.ms._renderer.appendChild(this.map.nativeElement, this.ms._container)
+    this.ms.renderer.appendChild(this.map.nativeElement, this.ms.container)
   }
 
 }

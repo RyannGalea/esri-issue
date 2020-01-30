@@ -8,19 +8,19 @@ import { BehaviorSubject } from 'rxjs'
 })
 export class MapService  {
 
-  public _map: Map
-  public _mapView: MapView
-  public _container: HTMLDivElement
-  public _renderer: Renderer2
-  public _mapView$: BehaviorSubject<MapView> = new BehaviorSubject<MapView>(null)
+  public map: Map
+  public mapView: MapView
+  public container: HTMLDivElement
+  public renderer: Renderer2
+  public mapView$: BehaviorSubject<MapView> = new BehaviorSubject<MapView>(null)
 
   constructor(private rendererFactory: RendererFactory2) {
 
-    this._renderer  = this.rendererFactory.createRenderer(null, null)
-    this._container = this._renderer.createElement('div')
-    this._map       = new Map({basemap: 'topo-vector'})
-    this._mapView   = new MapView({ container: this._container, map: this._map })
-    this._mapView.when(() => this._mapView$.next(this._mapView))
+    this.renderer  = this.rendererFactory.createRenderer(null, null)
+    this.container = this.renderer.createElement('div')
+    this.map       = new Map({basemap: 'topo-vector'})
+    this.mapView   = new MapView({ container: this.container, map: this.map })
+    this.mapView.when(() => this.mapView$.next(this.mapView))
 
   }
   
