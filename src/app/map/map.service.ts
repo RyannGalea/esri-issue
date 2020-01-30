@@ -1,6 +1,6 @@
 import { Injectable, RendererFactory2, Renderer2 } from '@angular/core'
-import Map from 'esri/Map'
-import MapView from 'esri/views/MapView'
+import Map from 'arcgis-js-api/Map'
+import MapView from 'arcgis-js-api/views/MapView'
 import { BehaviorSubject } from 'rxjs'
 
 @Injectable({

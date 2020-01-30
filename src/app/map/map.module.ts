@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import esriConfig from 'esri/config';
+import esriConfig from 'arcgis-js-api/config';
 import { MapComponent } from './map/map.component'
 
 
